@@ -1,0 +1,15 @@
+version: '3'
+services:
+
+  db:
+    image: mysql:8.3
+    container_name: hw14db
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "33306:3306"
+    environment:
+      MYSQL_DATABASE: tours
+      MYSQL_ROOT_PASSWORD: root
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
